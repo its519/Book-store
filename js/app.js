@@ -6,62 +6,62 @@ let storeItems = [
 
 ];
 // var itemId = 12;
-function s() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementByclass("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
+// function s() {
+//     var input, filter, ul, li, a, i, txtValue;
+//     input = document.getElementByclass("myInput");
+//     filter = input.value.toUpperCase();
+//     ul = document.getElementById("myUL");
+//     li = ul.getElementsByTagName("li");
+//     for (i = 0; i < li.length; i++) {
+//         a = li[i].getElementsByTagName("a")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
 //search item
-// (function(){
-// 	const searchItemForm = document.getElementById('search-store-item');
+(function(){
+	const searchItemForm = document.getElementById('search-store-item');
 	
-// 	searchItemForm.addEventListener('submit', function(event){
-// 		event.preventDefault();
+	searchItemForm.addEventListener('submit', function(event){
+		event.preventDefault();
 		
-// 		const searchFieldValue = document.getElementById('search-item').value;
-// 		// alert(searchFieldValue);
-// 		item_found = "";
+		const searchFieldValue = document.getElementById('search-item').value;
+		// alert(searchFieldValue);
+		item_found = "";
 		
-// 		storeItems.forEach(function(item){
-// 			if(item.name == searchFieldValue){
-// 				item_found = item;
-// 				return;
-// 			}
-// 		});
+		storeItems.forEach(function(item){
+			if(item.name == searchFieldValue){
+				item_found = item;
+				return;
+			}
+		});
 
-// 		if(item_found != ""){ 
-// 			const searchResultsContainer = document.getElementById('search-results-container');
-// 			searchResultsContainer.innerHTML = `<div class="card ">
-//             <div class="img-container">
-// 			<img src="${item_found.img}" class="card-img-top store-img" alt="">
-//               <span class="store-item-icon">
-//                 <i class="fas fa-shopping-cart" onClick="addToCart(this)"></i>
-//               </span>
-//             </div>
-//             <div class="card-body">
-//               <div class="card-text d-flex justify-content-between text-capitalize">
-//                 <h5 id="store-item-name">${item_found.name}</h5>
-//                 <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">${item_found.price}</strong></h5>
-//               </div>
-//             </div>
-//           </div>`
-// 		}
+		if(item_found != ""){ 
+			const searchResultsContainer = document.getElementById('search-results-container');
+			searchResultsContainer.innerHTML = `<div class="card ">
+            <div class="img-container">
+			<img src="${item_found.img}" class="card-img-top store-img" alt="">
+              <span class="store-item-icon">
+                <i class="fas fa-shopping-cart" onClick="addToCart(this)"></i>
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-text d-flex justify-content-between text-capitalize">
+                <h5 id="store-item-name">${item_found.name}</h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">${item_found.price}</strong></h5>
+              </div>
+            </div>
+          </div>`
+		}
 		
-// 		return false;
-// 	});
+		return false;
+	});
 	
-// })();
+})();
 
 //display all items
 (function(){
