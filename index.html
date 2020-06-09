@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- main css -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="css/all.css">
+  <title>Book Store</title>
+
+  <style type="text/css">
+
+    
+
+  </style>
+  
+
+</head>
+
+<body style="font-family:georgia,garamond,serif;">
+  <!-- header -->
+  <header>
+    <!-- navbar  -->
+    
+    <nav class="navbar navbar-expand-lg px-4" style="background-color: lightgreen">
+<!--      <a class="navbar-brand" href="#"><img src="img/logo.svg" alt=""></a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav">
+        <span class="toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNav" style="color: black">
+        <!-- <ul class="navbar-nav mx-auto text-capitalize">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="color: black">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" style="color: black">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: black">Liberary</a>
+          </li>
+        </ul> -->
+        <p style="margin-left: 30%; font-size: 30px;"> <strong>Welcome To Our Book Store</strong></p>
+        <div class="nav-info-items d-none d-lg-flex ">
+          <!-- single info -->
+          <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
+            
+<!--             <p class="mb-0" >0322 4572097</p> -->
+          </div>
+          <!-- end of single info -->
+          <!-- single info -->
+          <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
+            <span class="cart-info__icon mr-lg-3"><!-- <i class="fas fa-shopping-cart"> --></i></span>
+            <p class="mb-0 text-capitalize"><span id="item-count"></span> items - $<span class="item-total">0</span></p>
+          </div>
+          <!-- end of single info -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- end of nav -->
+    <!-- banner  -->
+    <div class="container-fluid">
+      
+        <div id="cart" class="cart">
+          <!-- cart item -->
+<!--          <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+            <img src="img-cart/cake-2.jpeg" class="img-fluid rounded-circle" id="item-img" alt="">
+            <div class="item-text">
+
+              <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+              <span>$</span>
+              <span id="cart-item-price" class="cart-item-price" class="mb-0">10.99</span>
+            </div> 
+            <a href="#" id='cart-item-remove' onClick="removeFromCart(this)" class="cart-item-remove">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>-->
+          <!--end of  cart item -->
+          <!-- cart item -->
+<!--          <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+            <img src="img-cart/doughnut-2.jpeg" class="img-fluid rounded-circle" id="item-img" alt="">
+            <div class="cart-item-text">
+
+              <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+              <span>$</span>
+              <span id="cart-item-price" class="cart-item-price" class="mb-0">10.99</span>
+            </div> 
+            <a href="#" id='cart-item-remove' onClick="removeFromCart(this)" class="cart-item-remove">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>-->
+          <!--end of  cart item -->
+          <!-- cart total -->
+          <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+            <h5>total</h5>
+            <h5> $ <strong id="cart-total" class="font-weight-bold">00</strong> </h5>
+          </div>
+          <!--end cart total -->
+          <!-- cart buttons -->
+          <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+            <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
+           <a href="#" class="btn btn-outline-secondary text-uppercase btn-black" id="co" onclick="checkout()">checkout</a>
+          </div>
+          <!--end of  cart buttons -->
+          <!--  -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+   
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <!-- header -->
+  <!-- about us -->
+
+  <!-- end of about us -->
+
+
+  <!-- store -->
+  <section id="store" class="store py-5" style="background-color: lightblue">
+    <div class="container">
+      <!-- section title -->
+      <div class="row">
+        <div class="col-10 mx-auto col-sm-6 text-center">
+          <h1 class="text-capitalize">our <strong class="banner-title " style="color: black">Book </strong>store</h1>
+        </div>
+      </div>
+      <!-- end of section title -->
+      <!--filter buttons -->
+      
+      <!-- search box -->
+      <div class="row">
+
+        <div class="col-10 mx-auto col-md-6">
+          <form id="search-store-item">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend ">
+                <span class="input-group-text search-box" id="search-icon"><i class="fas fa-search"></i></span>
+              </div>
+              <input   type="text" class="form-control" placeholder='Search Items' id="search-item" class="myInput"  onkeyup="s()">
+            </div>
+
+          </form>
+      <div id="search-results-container">
+      
+      </div>
+        </div>
+      </div>
+      <!--end of filter buttons -->
+      <!-- store  items-->
+      <div class="row" class="store-items" id="store-items">
+      </div>
+  </section>
+  <!--end of store items -->
+  
+  <!-- Add Item -->
+  <hr>
+  <section class="about py-5" id="about" style="background-color: lightblue">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-10 mx-auto col-md-6 my-5">
+          <h1 class="text-capitalize"> <strong class="banner-title " style="color: black">Add Book</strong></h1>
+      
+      <form id="mht-add-item-form">
+      
+      <label>Name: </label>
+      <input id="mht-item-name-field" name="mht-item-name" type="text" placeholder="Book Name" required /> <br />
+      
+      <label>Image: </label>
+      <input id="mht-item-image-field" name="mht-item-image" type="text" placeholder="Book Image Url" required /><br />
+      
+      <label>Price: </label>
+      <input id="mht-item-price-field" name="mht-item-price" type="number" min="0" value="0" required /><br />
+      
+      <button id="mht-add-item-button">Add Book</button>
+      
+      </form>
+      
+         <!-- <p class="my-4 text-muted w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, aliquam voluptas
+            beatae vitae expedita consectetur nesciunt quia deserunt asperiores facere fuga dicta fugiat corrupti et omnis
+            porro at dolorum! Ad!</p>
+          <a href="#" class="btn btn-outline-secondary btn-black text-uppercase ">explore</a> -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end of add item -->
+
+
+  <!-- modal-container -->
+  <div class="container-fluid ">
+    <div class="row lightbox-container align-items-center">
+      <div class="col-10 col-md-10 mx-auto text-right lightbox-holder">
+        <span class="lightbox-close"><i class="fas fa-window-close"></i></span>
+        <div class="lightbox-item"></div>
+        <span class="lightbox-control btnLeft"><i class="fas fa-caret-left"></i></span>
+        <span class="lightbox-control btnRight"><i class="fas fa-caret-right"></i></span>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- jquery -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- script js -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
